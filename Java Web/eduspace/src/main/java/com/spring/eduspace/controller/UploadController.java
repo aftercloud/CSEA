@@ -1,0 +1,183 @@
+package com.spring.eduspace.controller;
+
+import com.spring.eduspace.functions.Func;
+import com.spring.eduspace.resources.PdfInfo;
+import com.spring.eduspace.resources.PdfInfoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+@Controller
+public class UploadController {
+
+    @Autowired
+    private PdfInfoRepository pdfInfoRepository;
+
+    private static final String TYPECONTROLPDF = "application/pdf";
+
+    @RequestMapping("/upload_jdbc")
+    public String uploadJDBC(){
+        return "upload/upload_jdbc";
+    }
+
+    @RequestMapping("/upload_jsp")
+    public String uploadJSP(){
+        return "upload/upload_jsp";
+    }
+
+    @RequestMapping("/upload_servlet")
+    public String uploadServlet(){
+        return "upload/upload_servlet";
+    }
+
+    @RequestMapping("/upload_springboot")
+    public String uploadSpringBoot(){
+        return "upload/upload_springboot";
+    }
+
+    @PostMapping("/upload_file_jdbc")
+    public String uploadFileJDBC(@RequestParam("file") MultipartFile file){
+        String contentType = file.getContentType();
+        if(!contentType.equals(TYPECONTROLPDF)){
+            return "upload/upload_failure";
+        }
+        String fileName = file.getOriginalFilename();
+        contentType = fileName + "\n";
+        File direction = new File("");
+        String filePath = direction.getAbsolutePath() + "\\classes\\static\\pdf\\JDBC\\";
+        try {
+            long index = 1;
+            while (pdfInfoRepository.findById(index) != null){
+                index++;
+            }
+            PdfInfo pdfInfo = new PdfInfo();
+            pdfInfo.setId(index);
+            pdfInfo.setFileName(fileName);
+            pdfInfo.setFilePath(filePath);
+            pdfInfo.setType(Func.JDBCKEY);
+            pdfInfoRepository.save(pdfInfo);
+            Func.uploadFile(file.getBytes(), filePath, fileName);
+        }
+        catch (Exception e){
+            System.out.println(e.getCause().toString());
+        }
+        return "upload/upload_success";
+    }
+
+    @PostMapping("/upload_file_jsp")
+    public String uploadFileJSP(@RequestParam("file") MultipartFile file){
+        String contentType = file.getContentType();
+        if(!contentType.equals(TYPECONTROLPDF)){
+            return "upload/upload_failure";
+        }
+        String fileName = file.getOriginalFilename();
+        contentType = fileName + "\n";
+        File direction = new File("");
+        String filePath = direction.getAbsolutePath() + "\\classes\\static\\pdf\\JSP\\";
+        try {
+            long index = 1;
+            while (pdfInfoRepository.findById(index) != null){
+                index++;
+            }
+            PdfInfo pdfInfo = new PdfInfo();
+            pdfInfo.setId(index);
+            pdfInfo.setFileName(fileName);
+            pdfInfo.setFilePath(filePath);
+            pdfInfo.setType(Func.JSPKEY);
+            pdfInfoRepository.save(pdfInfo);
+            Func.uploadFile(file.getBytes(), filePath, fileName);
+        }
+        catch (Exception e){
+            System.out.println(e.getCause().toString());
+        }
+        return "upload/upload_success";
+    }
+
+    @PostMapping("/upload_file_servlet")
+    public String uploadFileServlet(@RequestParam("file") MultipartFile file){
+        String contentType = file.getContentType();
+        if(!contentType.equals(TYPECONTROLPDF)){
+            return "upload/upload_failure";
+        }
+        String fileName = file.getOriginalFilename();
+        contentType = fileName + "\n";
+        File direction = new File("");
+        String filePath = direction.getAbsolutePath() + "\\classes\\static\\pdf\\Servlet\\";
+        try {
+            long index = 1;
+            while (pdfInfoRepository.findById(index) != null){
+                index++;
+            }
+            PdfInfo pdfInfo = new PdfInfo();
+            pdfInfo.setId(index);
+            pdfInfo.setFileName(fileName);
+            pdfInfo.setFilePath(filePath);
+            pdfInfo.setType(Func.SERVLETKEY);
+            pdfInfoRepository.save(pdfInfo);
+            Func.uploadFile(file.getBytes(), filePath, fileName);
+        }
+        catch (Exception e){
+            System.out.println(e.getCause().toString());
+        }
+        return "upload/upload_success";
+    }
+
+    @PostMapping("/upload_file_springboot")
+    public String uploadFileSpringBoot(@RequestParam("file") MultipartFile file){
+        String contentType = file.getContentType();
+        if(!contentType.equals(TYPECONTROLPDF)){
+            return "upload/upload_failure";
+        }
+        String fileName = file.getOriginalFilename();
+        File direction = new File("");
+        String filePath = direction.getAbsolutePath() + "\\classes\\static\\pdf\\SpringBoot\\";
+        try {
+            long index = 1;
+            while (pdfInfoRepository.findById(index) != null){
+                index++;
+            }
+            PdfInfo pdfInfo = new PdfInfo();
+            pdfInfo.setId(index);
+            pdfInfo.setFileName(fileName);
+            pdfInfo.setFilePath(filePath);
+            pdfInfo.setType(Func.SPRINGBOOTKEY);
+            pdfInfoRepository.save(pdfInfo);
+            Func.uploadFile(file.getBytes(), filePath, fileName);
+        }
+        catch (Exception e){
+            System.out.println(e.getCause().toString());
+        }
+        return "upload/upload_success";
+    }
+
+    @GetMapping("/data_covergence")
+    public String dataCovergence(Model model){
+        List<PdfInfo>pdfInfoList = pdfInfoRepository.findAll();
+        model.addAttribute("message", pdfInfoList);
+        return "upload/data_covergence";
+    }
+
+    @PostMapping("/data_covergence")
+    public String refreshCovergence(@RequestParam("Id")long Id, Model model){
+        PdfInfo pdfInfo = pdfInfoRepository.findById(Id);
+        File file = new File(pdfInfo.getFilePath()+ pdfInfo.getFileName());
+        if(file.exists()){
+            file.delete();
+        }
+        pdfInfoRepository.delete(pdfInfo);
+        List<PdfInfo>pdfInfoList = pdfInfoRepository.findAll();
+        model.addAttribute("message", pdfInfoList);
+        return "upload/data_covergence";
+    }
+
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+
+	<meta charset="utf-8">
+	<title>综合实习</title>
+
+	<!-- CSS -->
+	<link th:href="@{/assets/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/assets/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/assets/css/form-elements.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/assets/css/style.css}" rel="stylesheet" type="text/css" />
+
+	<!-- Javascript -->
+	<script type="text/javascript"   th:src="@{/assets/js/jquery-1.11.1.min.js}"></script>
+	<script type="text/javascript"   th:src="@{/assets/bootstrap/js/bootstrap.min.js}"></script>
+	<script type="text/javascript"   th:src="@{/assets/js/jquery.backstretch.min.js}"></script>
+	<script type="text/javascript"   th:src="@{/assets/js/scripts.js}"></script>
+
+</head>
+
+<body>
+
+<!-- Top content -->
+<div class="top-content">
+
+	<div class="inner-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2 text">
+					<h1><strong>Spring 教学资源发布平台</strong> 实习</h1>
+					<div class="description">
+						<p>
+							实习数据如下，
+							<a href="/teacher"><strong>回到首页</strong></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row" align="center">
+				<table>
+					<tr>
+						<td><a href="/get_exercise" target="_blank">获取实习题目</a> </td>
+					</tr>
+					<tr th:each="rar : ${message}">
+						<td th:text="${'用户Id&nbsp;:&nbsp;' + rar.getId()} "></td>
+                        <td th:text="${'&nbsp;文件名:&nbsp;&nbsp;&nbsp;' + rar.getFileName()}"></td>
+                        <td th:text="${'&nbsp;&nbsp;&nbsp;时间戳:&nbsp;' + rar.getTimeout()}"></td>
+                        <td th:text="${'&nbsp;&nbsp;&nbsp;评分:&nbsp;' + rar.getGrade()}"></td>
+                        <td><a th:href="${'/de/' + rar.getId()}" target="_blank"> &nbsp;&nbsp;下载</a> </td>
+					</tr>
+				</table>
+                <table>
+                    <tr>
+                        <td>
+                            <form action="/data_delete" method="post" th:align="center">
+                                <br><br><br>
+                                <p>输入Id选择要删除的RAR压缩包</p>
+                                <input type="text" name="Id" placeholder="删除Id" style="height: 30px"/>
+                                <input type="submit" value="删除" style="height: 30px">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/data_grade" method="post" th:align="center">
+                                <br><br><br>
+                                <p>输入Id和分数进行评分</p>
+                                <input type="text" name="Id" placeholder="评分Id" style="height: 30px"/>
+                                <input type="text" name="Grade" placeholder="分数" style="height: 30px"/>
+                                <input type="submit" value="评分" style="height: 30px">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form enctype="multipart/form-data" method="post" action="/date_update">
+                                <br><br><br>
+                                <input type="file" name="file" value="选择题目"/>
+                                <input type="submit" value="上传题目"/>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

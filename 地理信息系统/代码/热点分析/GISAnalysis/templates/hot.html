@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+		#l-map{height:100%;width:78%;float:left;border-right:2px solid #bcbcbc;}
+		#r-result{height:100%;width:20%;float:left;}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=sUQ6UxKjYldHYUWfVMGDdSyYjNv6TBco"></script>
+	<title>武汉市热点区域 - {{ time_interval }} 时段</title>
+</head>
+<body>
+	<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(114.230118, 30.40458);
+	map.centerAndZoom(point, 15);
+	map.enableScrollWheelZoom(); // 允许滚轮缩放
+	// 编写自定义函数,创建标注
+	function addMarker(point, info){
+	  var marker = new BMap.Marker(point);
+	  var label = new BMap.Label(String(info[0])+"\n"+String(info[1]),{offset:new BMap.Size(20,-10)});
+	  marker.setLabel(label);
+	  marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+	  map.addOverlay(marker);
+	}
+
+	<!-- 热点数据 -->
+	var centers = {{ centers|safe }}
+    var centers_info = {{ centers_info|safe }}
+
+	for (var i = 0; i < centers.length; i ++) {
+		var point = new BMap.Point(centers[i][0], centers[i][1]);
+		addMarker(point, centers_info[i]);
+	}
+</script>

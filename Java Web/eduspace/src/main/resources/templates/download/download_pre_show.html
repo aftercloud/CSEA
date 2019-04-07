@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+	<meta charset="utf-8">
+	<title>资源下载 - JDBC</title>
+
+	<!-- CSS -->
+	<link th:href="@{/assets/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/assets/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/assets/css/form-elements.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/assets/css/style.css}" rel="stylesheet" type="text/css" />
+
+	<!-- Javascript -->
+	<script type="text/javascript"   th:src="@{/assets/js/jquery-1.11.1.min.js}"></script>
+	<script type="text/javascript"   th:src="@{/assets/bootstrap/js/bootstrap.min.js}"></script>
+	<script type="text/javascript"   th:src="@{/assets/js/jquery.backstretch.min.js}"></script>
+	<script type="text/javascript"   th:src="@{/assets/js/scripts.js}"></script>
+    <script type="text/javascript"   th:src="@{/PDFObject/pdfobject.js}"></script>
+
+</head>
+
+<body>
+<div id="pdf" style="width: 100%; height: 753px">
+    <script th:inline="javascript">
+        PDFObject.embed([[${file}]], '#pdf');
+    </script>
+</div>
+</body>
+</html>

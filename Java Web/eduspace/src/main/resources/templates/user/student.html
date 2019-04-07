@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:text="${'首页 - ' + name}"></title>
+	<link th:href="@{/ast/css/bootstrap.css}" rel="stylesheet" type="text/css" media="all"/>
+	<link th:href="@{/ast/css/style.css}" rel="stylesheet" type="text/css" media="all"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Archive Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href='https://fonts.googleapis.com/ css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<script type="text/javascript"   th:src="@{/ast/js/jquery.min.js}"></script>
+</head>
+<body>
+<!-- header -->
+	<div class="content-main">
+		<div class="container">
+			<div class="col-md-3 top-left">
+				<div class="logo">
+					<h1 style="color: aliceblue">学习端</h1>
+				</div>
+				<h4 class="menn">下载</h4>
+				<label></label>
+				<div class="head-nav">
+					<span class="menu"> </span>
+						<ul>
+							<li class="active"><a href="/download_jdbc" target="_blank">JDBC</a></li>
+							<li><a href="/download_jsp" target="_blank">JSP</a></li>
+							<li><a href="/download_servlet" target="_blank">Servlet</a></li>
+							<li><a href="/download_springboot" target="_blank">Spring Boot</a></li>
+								<div class="clearfix"> </div>
+						</ul>
+						<!-- script-for-nav -->
+					<script>
+						$( "span.menu" ).click(function() {
+						  $( ".head-nav ul" ).slideToggle(300, function() {
+							// Animation complete.
+						  });
+						});
+					</script>
+				<!-- script-for-nav --> 	
+				</div>
+				<div class="clearfix"> </div>
+				<div class="project">
+					<h4>代码</h4>
+					<label></label>
+					<ul>
+						<li class="active"><a href="/code_jdbc" target="_blank">JDBC</a></li>
+						<li><a href="/code_jsp">JSP</a></li>
+						<li><a href="/code_servlet">Servlet</a></li>
+						<li><a href="/code_springboot">Spring Boot</a></li>
+					</ul>
+				</div>
+				<div class="project">
+					<h4>作业</h4>
+					<label></label>
+					<ul>
+						<li class="active"><a href="/homework_s" target="_blank">课下作业</a></li>
+						<li><a href="/exercise_s" target="_blank">综合实习</a></li>
+					</ul>
+				</div>
+				<div class="project">
+					<h4>选项</h4>
+					<label></label>
+					<ul>
+						<li><a href="/teacher">教学端</a></li>
+						<li><a href="/registerStudent">注册账号</a></li>
+						<li><a href="/updateName">修改昵称</a></li>
+						<li><a href="/updatePassword">修改密码</a></li>
+						<li><a href="/logout">注销登陆</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-9 top-right">
+			<!-- banner -->
+				<div class="banner">
+					<div class="col-md-8 banner-left">
+						<h2> <a href="https://edu.csdn.net/">风雨后是晴空</a></h2>
+						<p>好大一棵二叉树<br>黄昏，暮霭漫漫<br>谁在寂寞的遍历树上每一个结点<br>你从无边的代码中抬起头<br>夜色，瞬间淹没了每一字节</p>
+					</div>
+					<div class="col-md-4 banner-right">
+					</div>
+						<div class="clearfix"> </div>
+				</div>
+				<!-- banner -->
+				<!-- welcome -->
+				<div class="welcome">
+					<div class="welcome-top">
+						<div class="col-md-6 welcome-left">
+							<div class="view view-tenth">
+							  <a href="https://www.imooc.com/" target="_blank">
+							   <div class="inner_content clearfix">
+								<div class="product_image">
+									<img th:src="@{/ast/images/img5.jpg}" class="img-responsive of-my" alt=""/>
+									<div class="mask" >
+										<h4>写给我们</h4>
+										<p>虚拟世界<br>你是内存中哪一个孤独的进程<br>现实社会<br>你是人群中哪一个平凡的身影<br>此端，彼岸<br>在冯·诺伊曼体系中切换</p>
+									</div>
+									</div>
+								 </div>
+								</a> 
+						   </div>
+						</div>
+						<div class="col-md-6 welcome-right">
+							<div class="view view-tenth">
+							  <a href="https://www.shiyanlou.com/" target="_blank">
+							   <div class="inner_content clearfix">
+								<div class="product_image">
+									<img th:src="@{/ast/images/img4.jpg}" class="img-responsive of-my" alt=""/>
+									<div class="mask" >
+										<h4>诗和远方</h4>
+										<p>不知道此生，我将创造多少<br>bug<br>也不知道<br>今世，我会手刃bug几何<br>但是，我知道<br>你用等待,守候我晚归的夜</p>
+									</div>
+									</div>
+								 </div>
+								</a> 
+						   </div>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				<!-- welcome-bottom -->
+				<div class="copyrights">Collect from <a href="http://www.cssmoban.com/" ></a></div>
+					<div class="welcome-bottom">
+						<div class="col-md-6 welcome-left1">
+							<a href="http://projects.spring.io/spring-boot/#quick-start" target="_blank">
+								<img th:src="@{/ast/images/img6.jpg}" class="img-responsive of-my" alt=""/></a>
+							<h3><a href="http://projects.spring.io/spring-boot/#quick-start" target="_blank">Spring Boot</a></h3>
+							<h6>2 , 12 , 2016</h6>
+							<p>Takes an opinionated view of building production-ready Spring applications. Spring Boot favors convention over configuration and is designed to get you up and running as quickly as possible.</p>
+							<a href="http://projects.spring.io/spring-boot/#quick-start" target="_blank">了解更多</a>
+						</div>
+						<div class="col-md-6 welcome-right1">
+							<div class="free">
+								<div class="free-left">
+									<a href="http://www.runoob.com/w3cnote/jdbc-use-guide.html" target="_blank">
+										<img th:src="@{/ast/images/img7.jpg}" class="img-responsive of-my" alt=""/></a>
+								</div>
+								<div class="free-right">
+									<h5><a href="http://www.runoob.com/w3cnote/jdbc-use-guide.html" target="_blank">JDBC</a></h5>
+									<p>JDBC API 允许用户访问任何形式的表格数据，尤其是存储在关系数据库中的数据</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="free">
+								<div class="free-left">
+									<a href="http://www.runoob.com/jsp/jsp-tutorial.html" target="_blank">
+										<img th:src="@{/ast/images/img8.jpg}" class="img-responsive of-my" alt=""/></a>
+								</div>
+								<div class="free-right">
+									<h5><a href="http://www.runoob.com/jsp/jsp-tutorial.html" target="_blank">JSP</a></h5>
+									<p>JSP 技术是以 Java 语言作为脚本语言的，JSP 网页为整个服务器端的 Java 库单元提供了一个接口来服务于HTTP的应用程序 </p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="free">
+								<div class="free-left">
+									<a href="http://www.runoob.com/servlet/servlet-tutorial.html" target="_blank">
+										<img th:src="@{/ast/images/img9.jpg}" class="img-responsive of-my" alt=""/></a>
+								</div>
+								<div class="free-right">
+									<h5><a href="http://www.runoob.com/servlet/servlet-tutorial.html">Servlet</a></h5>
+									<p>Servlet 为创建基于 web 的应用程序提供了基于组件、独立于平台的方法 </p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="free">
+								<div class="free-left">
+									<a href="https://www.yiibai.com/spring-boot/" target="_blank">
+										<img th:src="@{/ast/images/img10.png}" class="img-responsive of-my" alt=""/></a>
+								</div>
+								<div class="free-right">
+									<h5><a href="https://www.yiibai.com/spring-boot/" target="_blank">Spring Boot</a></h5>
+									<p>Spring Boot将能够以更灵活的方式开发Spring应用程序 </p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				<!-- welcome-bottom -->
+				</div>
+			<!-- welcome -->
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!-- footer -->
+</body>
+</html>

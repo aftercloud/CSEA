@@ -1,0 +1,48 @@
+﻿生成启动时间为 2018/12/1 19:06:55。
+     1>项目“C:\Users\argon\Desktop\CG - 4\光线投射\distrib\a4.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug\a4.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Ivecmath/include /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\users\argon\desktop\cg - 4\光线投射\distrib\Camera.h(56): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>main.cpp(49): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>main.cpp(49): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xutility(2227): warning C4996: 'std::_Copy_impl': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\xutility(2212) : 参见“std::_Copy_impl”的声明
+                 c:\users\argon\desktop\cg - 4\光线投射\distrib\bitmap_image.hpp(159): 参见对正在编译的函数 模板 实例化“_OutIt std::copy<unsigned char*,unsigned char*>(_InIt,_InIt,_OutIt)”的引用
+                 with
+                 [
+                     _OutIt=unsigned char *,
+                     _InIt=unsigned char *
+                 ]
+       ManifestResourceCompile:
+         所有输出均为最新。
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\argon\Desktop\CG - 4\光线投射\distrib\Debug\a4.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\a4.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\argon\Desktop\CG - 4\光线投射\distrib\Debug\a4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\argon\Desktop\CG - 4\光线投射\distrib\Debug\a4.lib" /MACHINE:X86 Debug\a4.exe.embed.manifest.res
+         Debug\Image.obj
+         Debug\main.obj
+         Debug\Mesh.obj
+         Debug\SceneParser.obj
+         Debug\texture.obj
+         Debug\Matrix2f.obj
+         Debug\Matrix3f.obj
+         Debug\Matrix4f.obj
+         Debug\Quat4f.obj
+         Debug\Vector2f.obj
+         Debug\Vector3f.obj
+         Debug\Vector4f.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\a4.exe.embed.manifest" /manifest Debug\a4.exe.intermediate.manifest
+         所有输出均为最新。
+       LinkEmbedManifest:
+         所有输出均为最新。
+         a4.vcxproj -> C:\Users\argon\Desktop\CG - 4\光线投射\distrib\Debug\a4.exe
+       FinalizeBuildStatus:
+         正在删除文件“Debug\a4.unsuccessfulbuild”。
+         正在对“Debug\a4.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\Users\argon\Desktop\CG - 4\光线投射\distrib\a4.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.46

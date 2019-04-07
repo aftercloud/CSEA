@@ -1,0 +1,10 @@
+﻿  gl_2.cpp
+c:\users\argon\source\repos\gl_2\gl_2\gl_2.cpp(64): warning C4305: “参数”: 从“double”到“GLfloat”截断
+c:\users\argon\source\repos\gl_2\gl_2\gl_2.cpp(66): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\argon\source\repos\gl_2\gl_2\gl_2.cpp(68): warning C4244: “参数”: 从“double”转换到“const unsigned int”，可能丢失数据
+c:\users\argon\source\repos\gl_2\gl_2\gl_2.cpp(68): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\argon\source\repos\gl_2\gl_2\gl_2.cpp(69): warning C4244: “参数”: 从“double”转换到“const unsigned int”，可能丢失数据
+c:\users\argon\source\repos\gl_2\gl_2\gl_2.cpp(69): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\argon\source\repos\gl_2\gl_2\gl_2.cpp(70): warning C4244: “参数”: 从“double”转换到“const unsigned int”，可能丢失数据
+c:\users\argon\source\repos\gl_2\gl_2\gl_2.cpp(70): warning C4244: “参数”: 从“double”转换到“GLfloat”，可能丢失数据
+  gl_2.vcxproj -> C:\Users\argon\source\repos\gl_2\Debug\gl_2.exe

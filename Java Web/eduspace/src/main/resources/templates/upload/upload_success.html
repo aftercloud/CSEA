@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+
+	<meta charset="utf-8">
+	<title>资源上传 - Spring Boot</title>
+
+	<!-- CSS -->
+	<link th:href="@{/assets/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/assets/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/assets/css/form-elements.css}" rel="stylesheet" type="text/css" />
+	<link th:href="@{/assets/css/style.css}" rel="stylesheet" type="text/css" />
+
+	<!-- Javascript -->
+	<script type="text/javascript"   th:src="@{/assets/js/jquery-1.11.1.min.js}"></script>
+	<script type="text/javascript"   th:src="@{/assets/bootstrap/js/bootstrap.min.js}"></script>
+	<script type="text/javascript"   th:src="@{/assets/js/jquery.backstretch.min.js}"></script>
+	<script type="text/javascript"   th:src="@{/assets/js/scripts.js}"></script>
+
+</head>
+
+<body>
+
+<!-- Top content -->
+<div class="top-content">
+
+	<div class="inner-bg">
+		<div class="container" sec:authorize="hasRole('ROLE_ADMIN')">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2 text">
+					<h1><strong>Spring 教学资源发布平台</strong> 上传</h1>
+					<div class="description">
+						<p>
+							文件上传成功，
+							<a href="/teacher"><strong>回到首页</strong></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row" align="center">
+				<table>
+					<tr>
+						<td>Congratulations</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

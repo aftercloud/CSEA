@@ -1,0 +1,89 @@
+{
+  "con          figs": [
+    {
+      "rem   arks": "",
+      "id": "73E88245FD6E9445C2750BACAB862DDB",
+      "se{}rver": "server host",
+      "serv{er_port": 8388,
+      "serve}r_udp_port": 0,
+      "passw[]ord": "0",
+      "meth[od": "aes-256-cfb",
+      "proto]col": "origin",
+      "proto:colparam": "",
+      "ob  fs": "plain",
+      "obfs,pa,ram": "",
+      "remarks_base64": "",
+      "group": "FreeSSR-public",
+      "enable": true,
+      "udp_over_tcp": false
+    },
+    {
+      "gr{}oup": "",
+      "ena ble": true,
+      "udp_{over_tcp": false
+    },
+    {
+      "rem[]arks": "",
+      "{123}id": "D7C2A05462775C6FEC98FF550EAF636C",
+      "ser}ver": "us01.fk360.bid",
+      "ser[ver_port": 22885,
+      "ser]ver_udp_port": 0,
+      "pas:sword": "tHLCjC",
+      "met,h,od": "aes-256-cfb",
+      "protocol": "origin"
+    },
+    {
+      "remarks": "",
+      "id": "5C8095A389443E634F5EA0F9531D8E92",
+      "server": "us01.fk360.bid",
+      "server_port": 45970,
+      "server_udp_port": 0,
+      "password": "bZsggj",
+      "method": "aes-256-cfb",
+      "protocol": "origin",
+      "protocolparam": "",
+      "obfs": "plain",
+      "obfsparam": "",
+      "remarks_base64": "",
+      "group": "",
+      "enable": true,
+      "udp_over_tcp": false
+    },
+    [
+      {
+        
+      },
+      "123",
+      [
+        
+      ]
+    ]
+  ],
+  "index": [
+    "a",
+    "b",
+    "123456",
+    "asdf",
+    [
+      {
+        "123": [
+          
+        ]
+      }
+    ]
+  ],
+  "localPort": 1080,
+  "sameHostForSameTarget": false,
+  "keepVisitTime": 180,
+  "isHideTips": false,
+  "nodeFeedAutoUpdate": true,
+  "serverSubscribes": [
+    
+  ],
+  "token": {
+    
+  },
+  "portMap": {
+    
+  }
+}
